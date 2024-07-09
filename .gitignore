@@ -1,0 +1,33 @@
+# Dependency directories
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodoide/
+.cache/
+npm-debug.log*
+
+# Build files
+dist/
+build/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db

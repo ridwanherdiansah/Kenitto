@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "dce04ec1-08dd-48f8-9815-24cb55d1748d",
+		"name": "API documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14486784"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "registrasi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### Deskripsi Endpoint:\n\nEndpoint ini digunakan untuk registrasi pengguna baru. Endpoint menerima input dalam bentuk `form-data` ataupun \\`row - json\\` untuk mendaftarkan pengguna baru dengan detail yang diberikan.\n\n**URL**\n\n[http://localhost:3000/auth/registrasi](http://localhost:3000/auth/registrasi)\n\n**Parameternya**\n\nname (string): Nama pengguna.  \nusername (string): Nama pengguna baru.  \nemail (string): Alamat email pengguna.  \npassword (string): Kata sandi untuk pengguna baru.\n\n**Response berhasil**\n\n{  \n\"message\": \"Registrasi Success\",  \n\"data\": {  \n\"fieldCount\": 0,  \n\"affectedRows\": 1,  \n\"insertId\": 95,  \n\"info\": \"\",  \n\"serverStatus\": 2,  \n\"warningStatus\": 0,  \n\"changedRows\": 0  \n}  \n}\n\n**Response Gagal**\n\n{  \n\"message\": \"Registrasi Error\",  \n\"serverMessage\": \"Duplicate entry 'jhon@gmail.com' for key 'users.email'\"  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "#### Deskripsi Endpoint:\n\nEndpoint ini digunakan untuk autentikasi pengguna. Endpoint menerima input dalam bentuk `form-data` atau json untuk masuk ke dalam sistem dengan detail yang diberikan.\n\n**URL**\n\n[http://localhost:3000/auth/login](http://localhost:3000/auth/registrasi)\n\n**Parameternya**\n\nemail (string): Alamat email pengguna.  \npassword (string): Kata sandi untuk pengguna\n\n**Response berhasil**\n\n{  \n\"message\": \"Login berhasil\",  \n\"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1hIjoiamhvbmUiLCJ1c2VybmFtZSI6Impob25lIGR1ZSIsImVtYWlsIjoiamhvbkBnbWFpbC5jb20iLCJpYXQiOjE3MjA2MDM2MzIsImV4cCI6MTcyMDYwNzIzMn0.7Y7ciR9mNZhkd_V4S0tsxrBl3ErjfqsJkb3NsOtqK10\"  \n}\n\n**Response Gagal**\n\n{  \n\"message\": \"Login Error\",  \n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "**Deskripsi Endpoint**\n\nEndpoin ini digunakan untuk melakukan CRUD yang akan di lakukan pada tabel product\n\n**URL**  \n[http://localhost:3000/product](http://localhost:3000/rpduct)\n\n**Parameternya**  \nname (string): Nama product.  \nsize (string): Ukuran product.  \nfile (string): Nama File yang di unggah.  \nid_users (string): Id Users untuk join.\n\n**Response berhasil**\n\n{  \n\"message\": \"Create Success\",  \n}\n\n**Response Gagal**\n\n{  \n\"errors\": \\[  \n{  \n\"type\": \"field\",  \n\"value\": \"\",  \n\"msg\": \"Name harus di isi\",  \n\"path\": \"name\",  \n\"location\": \"body\"  \n}  \n\\]  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "update prodcut",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng UPDATE data product sesuai id yang di kirimkan yang ada di tabel product\n\nURL  \n[http://localhost:3000/product/:id](http://localhost:3000/product/:id)\n\nResponse berhasil\n\n{  \n\"message\": \"Update success\",  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng DELETE data product sesuai id yang di kirimkan yang ada di tabel product\n\nURL  \n[http://localhost:3000/product/:id](http://localhost:3000/product/:id)\n\nResponse berhasil\n\n{  \n\"message\": \"Delete success\",  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "get all product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						},
+						"description": "**Deskripsi Endpoint:**  \nEndpoint ini digunakan untuk meng GET semua porduct yang ada di tabel product\n\n**URL**  \n[http://localhost:3000/product](http://localhost:3000/product)\n\n**Response berhasil**\n\n{  \n\"message\": \"Get All Product\",  \n\"data\": \\[  \n{  \n\"id\": 19,  \n\"name\": \"product\",  \n\"size\": \"L\",  \n\"imageUrl\": \"/uploads/1720604588256-franz-wilhelm-junghuhn-dan-kecintaannya-pada-wilayah-priangan_1665560888.jpg\",  \n\"id_users\": \"1\"  \n}  \n\\]  \n}"
+					},
+					"response": []
+				}
+			],
+			"description": "The `/collections` endpoints let you manage your [collections](https://learning.postman.com/docs/sending-requests/intro-to-collections/)."
+		},
+		{
+			"name": "fakeAPI",
+			"item": [
+				{
+					"name": "get fakeAPI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng GET data API dari externa\n\nURL  \n[http://localhost:3000/fakeAPI](http://localhost:3000/product/:id)\n\nResponse berhasil\n\n{  \n\"id\": 1,  \n\"title\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",  \n\"price\": 109.95,  \n\"description\": \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",  \n\"category\": \"men's clothing\",  \n\"image\": \"[https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\"](https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg),  \n\"rating\": {  \n\"rate\": 3.9,  \n\"count\": 120  \n}  \n},  \n{  \n\"id\": 2,  \n\"title\": \"Mens Casual Premium Slim Fit T-Shirts \",  \n\"price\": 22.3,  \n\"description\": \"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.\",  \n\"category\": \"men's clothing\",  \n\"image\": \"[https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg\"](https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg),  \n\"rating\": {  \n\"rate\": 4.1,  \n\"count\": 259  \n}  \n},"
+					},
+					"response": []
+				},
+				{
+					"name": "create fakeAPI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng CREATE data API dari externa\n\nURL  \n[http://localhost:3000/fakeAPI](http://localhost:3000/fakeAPI)\n\nparameter\n\nResponse berhasil  \n{  \n\"message\": \"Create success\",  \n\"data\": \\[  \n{  \nid:31,  \ntitle:'...',  \nprice:'...',  \ncategory:'...',  \ndescription:'...',  \nimage:'...'  \n}  \n\\]  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "update fakeAPI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng Update data API dari externa\n\nURL  \n[http://localhost:3000/fakeAPI/6](http://localhost:3000/fakeAPI/6)\n\nparameter  \ntitle: 'test product',  \nprice: 13.5,  \ndescription: 'lorem ipsum set',  \nimage: '[https://i.pravatar.cc'](https://i.pravatar.cc'),  \ncategory: 'electronic'\n\nResponse berhasil  \n{  \n\"message\": \"Update success\",  \n}"
+					},
+					"response": []
+				},
+				{
+					"name": "delete fakeAPI",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaksi",
+			"item": [
+				{
+					"name": "post query transaktion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng INSERT QUERY TRANSACTION di tabel USERS dan PRODUCT. dimana apabila  \nBEGIN  \ndigunakan saat data akan diproses.  \nCOMMIT  \ndigunakan jika semua kasus pada alur proses berhasil. Bila demikian, fungsi commit harus diterapkan agar tersimpan di database.  \nROLLBACK  \ndigunakan jika terdapat kasus ada kegagalan (kesalahan/error) di salah satu proses itu. Maka, semua proses input akan dibatalkan (rollback) dan tidak akan disimpan ke dalam database.  \ndan ini hanya berlaku untuk json endpoin\n\nURL  \n[http://localhost:3000/transaksi](http://localhost:3000/transaksi)\n\nparameter\n\nname (string): Nama pengguna.  \nusername (string): Nama pengguna baru.  \nemail (string): Alamat email pengguna.  \npassword (string): Kata sandi untuk pengguna baru.  \nnameProduct (string): Nama product.  \nsize (string): Ukuran product.  \nimagesUrl (string): Nama File yang di unggah.  \nid_users (string): Id Users untuk join.\n\nResponse berhasil  \n{  \n\"message\": \"Update success\",  \n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "join Tabel",
+			"item": [
+				{
+					"name": "query Join Tabel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Deskripsi Endpoint:  \nEndpoint ini digunakan untuk meng GET data users yang di JOIN kan dengan tabel product dengan menggunakan query berdasarkan ID dari data Users\n\nURL  \n[http://localhost:3000/product/joinProduct](http://localhost:3000/product/joinProduct)\n\nparameter\n\nResponse berhasil  \n{  \n\"message\": \"Join success\",  \n\"data\": {  \n\"id\": \"8\",  \n\"name\": \"users\",  \n\"username\": \"user username\",  \n\"email\": \"[users@gmail.com](https://mailto:users@gmail.com)\",  \n\\[  \n\"id\": \"2\",  \n\"id_users\": \"8\"  \n\"nameProduct\": \"product\"  \n\"size\": \"L\",  \n\"imageUrl\": \"image.jpg\"  \n\\];  \n}  \n}"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}

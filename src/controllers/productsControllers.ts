@@ -1,7 +1,5 @@
 import { Request, Response } from 'express';
 import ProductModels from '../models/product';
-import multer from 'multer';
-import path from 'path';
 
 class ProductsControllers {
     static getAllProduct = async (req: Request, res: Response) => {
@@ -23,7 +21,7 @@ class ProductsControllers {
     static createProduct = async (req:Request, res:Response) => {
         try {
             const body = req.body;
-            
+
             // konfigurasi multer untuk menyimpan file
             if (req.file) {
                 body.imageUrl = `/uploads/${req.file.filename}`;
@@ -33,8 +31,8 @@ class ProductsControllers {
 
             res.json({
                 message: 'Create Success',
-                data:data
-            })
+                data:data,
+            });
         } catch (error:any) {
             res.status(500).json({ 
                 message: 'Server Error',

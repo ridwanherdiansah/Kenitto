@@ -7,18 +7,19 @@ interface Product  {
     imageUrl: string;
 };
 
+
+
+const create = (body: Product) => {
+    const { name, size, id_users, imageUrl } = body;
+    const SQLQuery = `INSERT INTO product (name, size, id_users, imageUrl) VALUES (?, ?, ?, ?)`;
+
+    return dbPool.execute(SQLQuery, [name, size, id_users, imageUrl]);
+};
+
 const get = () => {
     const SQLQuery = 'SELECT * FROM product';
 
     return dbPool.execute(SQLQuery);
-};
-
-const create = (body:Product) => {
-    const { name, size, id_users, imageUrl} = body;
-    const SQLQuery = `  INSERT INTO product (name, size, id_users, imageUrl)
-                        VALUES ('${body.name}', '${body.size}', '${body.id_users}', '${body.imageUrl}')`;
-
-    return dbPool.execute(SQLQuery, [name, size, id_users, imageUrl]);
 };
 
 const update = (body:Product, params: {id: number}) => {

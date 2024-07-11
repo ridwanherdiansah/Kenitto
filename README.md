@@ -23,6 +23,9 @@ Instruksi ini akan membantu Anda mengatur dan menjalankan proyek di mesin lokal 
 - npm
 - Mysql
 
+## Postman Dokumentasi
+https://documenter.getpostman.com/view/14486784/2sA3e4A92d
+
 ## Instalasi
 
 1. Clone repositori ini ke mesin lokal Anda:
